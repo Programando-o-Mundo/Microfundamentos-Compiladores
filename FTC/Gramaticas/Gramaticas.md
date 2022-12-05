@@ -105,7 +105,7 @@ Uma gramática é dita regular, quando a mesma possui apenas derivação ou para
 S → aA
 A → aA | bA | λ
 
-Gramáticas Livres de Contexto (tipo 2)
+## Gramáticas Livres de Contexto (tipo 2)
 
 São gramáticas caracterizadas pela V → α onde α pertence a expressão (V U T*).
 
