@@ -11,3 +11,6 @@ disciplina de Compiladores:
 * Autômatos Finitos Determinísticos
 * Expressões Regulares
 * Gramáticas regulares e livres de contexto
+
+Uma recomendação de aula para aprender FTC no geral é esta:
+https://homepages.dcc.ufmg.br/~msalvim/?page_id=631
