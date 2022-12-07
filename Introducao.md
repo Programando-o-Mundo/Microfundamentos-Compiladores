@@ -30,8 +30,8 @@ int main() {
   return 0;
 }
 ``` 
-O que temos neste exemplo é um código na linguagem C, que para o nosso caso é a tão chamada **Linguagem Fonte**. Para a máquina essa
-sopa de letrinhas não possui nenhum significado. Podemos verificar isso, rodando o comando **file** do Linux neste arquivo, e verificando
+O que temos neste exemplo é um código na linguagem C, que para o nosso caso é a chamada **Linguagem Fonte**. Para a máquina essa
+sopa de letrinhas não possui nenhum significado, e podemos verificar isso, rodando o comando **file** do Linux neste arquivo, e verificando
 que o mesmo é apenas um arquivo de texto.
 
 ``` 
@@ -39,7 +39,7 @@ $ file hello.c
 hello.c: C source, ASCII text
 ``` 
 
-Para dar significado a esse arquivo de texto para o computador, iremos chamar um compilador, neste caso como estamos lidando com a linguagem C
+Para que este arquivo de texto tenha um significado para o computador, iremos chamar um compilador, neste caso como estamos lidando com a linguagem C
 usarei o conhecido GCC (Gnu C Compiler).
 
 ```
@@ -48,17 +48,15 @@ $ gcc main.c
 
 Ao invocarmos esse comando, estamos pedindo para o compilador compilar o nosso arquivo ```main.c``` e o tempo necessário para 
 compilar o nosso arquivo, nós chamamos de **Tempo de compilação**. O resultado final da compilação nesse caso, irá gerar um arquivo 
-chamada a.out, que é a nossa linguagem alvo. Como estou em uma máquina Linux, o resultado do GCC será um programa escrito em Assembly x86_64, 
+chamada ```a.out```, que é a nossa linguagem alvo. Como estou em uma máquina Linux, o resultado do GCC será um programa escrito em Assembly x86_64, 
 específico para a arquitetura e o Sistema Operacional do meu computador.
 
-Obs.: Se eu mandar esse mesmo a.out para outra máquina Linux, o meu programa irá rodar, mas se eu mandar para outro Sistema Operacional
-(como o Windows) ou para um computador com outra arquitetura (Como ARM ou Risc-V), esse código não irá rodar.
-
-Obs2.: Podemos novamente confirmar o tipo de arquivo gerado pelo compilador, se rodarmos o comando **file** no arquivo a.out
+Obs.: Podemos novamente confirmar o tipo de arquivo gerado pelo compilador, se rodarmos o comando **file**, desta vez no arquivo ```a.out```. O resultado desse comando
+nos informa que o nosso ```a.out``` é nada mais do que um Executable and Linkable File (ELF) de 64 bits, um padrão de arquivos executáveis no Linux.
 
 ``` 
 $ file a.out
-hello: hello: ELF 64-bit LSB pie executable, x86-64...
+a.out: ELF 64-bit LSB pie executable, x86-64...
 ``` 
 
 Agora vamos então rodar esse nosso programa compilado.
@@ -68,13 +66,29 @@ $ ./a.out
 Hello World!
 ``` 
 
-Aqui, quando executamos esse comando estamos rodando o nosso programa, e o intervalo em que um programa permanece em execução
-chamamos de **Tempo de execução**.
+
+Obs.: Se eu mandar esse mesmo ```a.out``` para outra máquina Linux, o meu programa irá rodar, mas se eu mandar para outro Sistema Operacional
+(como o Windows) ou para um computador com outra arquitetura (Como ARM ou Risc-V), esse código não irá rodar.
+
+Aqui, quando executamos esse comando estamos rodando o nosso programa, o intervalo em que um programa permanece em execução
+é chamado de **Tempo de execução**.
 
 ## Interpretador
 
-Programas que leem um código fonte e interpreta tal e converte em código executável
-o código.
+Muitos de vocês já devem ter utilizado linguagens com Python, Java, Javascript e entre outras. Essas linguagens, diferentes da linguagens com C e C++, que são puramente Compiladas, essas linguagens possuem um programa chamado de Interpretador.
 
-Aqui, diferente do compilador onde o tempo de compilação e execução são diferentes, aqui o 
-tempo de compilação e execução são os mesmos.
+Diferente do compilador que tem como objetivo gerar um arquivo escrito na Linguagem Alvo, o Interpretador é um programa que lê um arquivo (código fonte) e interpreta tal arquivo e converte em código executável linha por linha.
+
+Nós não iremos entrar em grande detalhe sobre o funcionamento desses programas, pois não é o foco da disciplina, a coisa mais importante que você precisa entender aqui, é diferente do compilador, o Interpretador não irá gerar um arquivo com a Linguagem Alvo, pois o código será executado na medida que for analisado. Além disso, o tempo de compilação e execução são diferentes, aqui o tempo de compilação e execução são os mesmos.
+
+## "Primos" do Compilador
+
+Além do Compilador, seria interessante você entender mais dois programas que são fundamentais na geração do código.
+
+### Montador
+
+O primeiro deles é o montador, alguns compiladores possuem um montador embutido, mas a sua função é traduzir o código gerador pelo Compilador (Assembly) e transformar em uma representação intermediária chamada de código objeto. Este código de montagem é uma versão mnemônica do código de máquina, onde é utilizado nomes em lugar de código de máquina. Para transformar esse código, em um programa que a máquina possa ler, iremos usar o segundo programa, o Linkeditor
+
+### Linkeditor 
+
+O Linkeditor, Ligador ou Editor de Ligações tem como objetivo permite criar um único programa, a partir de vários arquivos de código objeto. Isso acontece pois vamos supor que estamos trabalho em um projeto com vários arquivos diferentes, cada um deles vai gerar o seu próprio arquivo de código objeto. No final da compilação, cabe ao Linkeditor pegar todos esses arquivos e juntá-los em um executável apenas.
