@@ -12,7 +12,11 @@
 
 - Noções básicas de Fundamentos Teóricos da Computação.
 
-## Definição
+# Seja bem vindo a Compiladores
+
+Nesta aula do microfundamentos você terá uma visão panorâmica dos mais importantes conceitos que você precisa saber na disciplina. De certa forma, para uma primeira aula esta é bem grande, mas não se preocupe, iremos voltar nesses conceitos sempre quando for necessário, por enquanto, seja bem vindo a Compiladores e espero que goste desta aula introdutória :).
+
+## O que é um Compilador?
 
 Até então na programação o que temos feito é sermos usuários de Linguagens de Programação como C, C++, Java, Python e entre outros. Agora
 neste microfundamento, iremos aprender como fazer a nossa própria Linguagem a partir de um software chamado de Compilador.
@@ -27,9 +31,11 @@ flowchart LR
     id4>Mensagem de Erro]
 
     subgraph Compilação
+    direction TB
     id1 --> id2
     id2 --> id3
     end
+    
     id2 --> id4
 ```
 
@@ -169,6 +175,8 @@ flowchart TD
 
 Agora que temos uma noção geral do compilador, podemos agora falar sobre as fases do Compilador. O Compilador pode ser dividido em três seções, o Front-End (Vanguarda), o Middle-End e o Back-End (Retaguarda).
 
+Obs.: Uma importante coisa a ser notada, é que as fases do Compilador acontece de forma simultânea.
+
 ## Front-End
 
 O Front-End possui três componentes, o Analisador Léxico, Analisador Sintático e o Analisador Semântico
@@ -254,9 +262,11 @@ Neste caso, temos uma incompatibilidade de tipos, pois o identificador é do tip
 
 ## Middle-end
 
+As análises feitas pelo Front-End implica na construção de código, mas não de código de máquina.
+
 ### Geração de Código Intermediário
 
-Responsável por representar as estruturas  sintáticas  encontradas  na  forma  de  um  programa  para uma  máquina  abstrata.  Esta  representação  intermediária facilita a conversão do programa fonte para o programa alvo. 
+Inicialmente temos a Geração de Código Intermediário, responsável por representar as estruturas sintáticas encontradas na forma de um programa para uma  máquina  abstrata. Esta representação intermediária facilita a conversão do programa fonte para o programa alvo. 
 
 ```mermaid
 classDiagram
@@ -299,21 +309,45 @@ CodigoIntermediario  : t2 = t1+3
 CodigoIntermediario  : d = t2
 
 direction LR
-CodigoIntermediario --> OtimizacaoPeephole
+CodigoIntermediario --> Otimizacao
 
 class OtimizacaoPeephole
 OtimizacaoPeephole  : b = 3
 OtimizacaoPeephole  : c = 7
 OtimizacaoPeephole  : t1 = b * c
-OtimizacaoPeephole  : t2 = t1+3
+OtimizacaoPeephole  : t1 = t1+3
 OtimizacaoPeephole  : d = t2
 ```
 
 ## Back-end
 
+Por fim, temos o Back-end, onde aqui temos apenas uma única fase, que é o chamado Gerador de Código.
+
 ### Gerador de Código
 
-Realiza a conversão do código intermediário para o código alvo. 
+Na fase final da compilação, o Gerador de Código realiza a conversão do código intermediário já otimizado, para o código alvo. 
+
+```mermaid
+classDiagram
+
+class CodigoIntermediario
+CodigoIntermediario  : b = 3
+CodigoIntermediario  : c = 7
+CodigoIntermediario  : t1 = b * c
+CodigoIntermediario  : t2 = t1+3
+CodigoIntermediario  : d = t2
+
+direction LR
+CodigoIntermediario --> CodigoDeMaquina
+
+class CodigoDeMaquina
+CodigoDeMaquina  : MOVI b, 3
+CodigoDeMaquina  : MOVI c, 7
+CodigoDeMaquina  : MOV r0, b
+CodigoDeMaquina  : MUL r0, c
+CodigoDeMaquina  : ADDI r0, 3
+CodigoDeMaquina  : MOV d, r0
+```
 
 # "Primos" do Compilador
 
