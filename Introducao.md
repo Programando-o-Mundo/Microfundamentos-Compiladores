@@ -311,12 +311,12 @@ CodigoIntermediario  : d = t2
 direction LR
 CodigoIntermediario --> Otimizacao
 
-class OtimizacaoPeephole
-OtimizacaoPeephole  : b = 3
-OtimizacaoPeephole  : c = 7
-OtimizacaoPeephole  : t1 = b * c
-OtimizacaoPeephole  : t1 = t1+3
-OtimizacaoPeephole  : d = t2
+class Otimizacao
+Otimizacao  : b = 3
+Otimizacao  : c = 7
+Otimizacao  : t1 = b * c
+Otimizacao  : t1 = t1+3
+Otimizacao  : d = t2
 ```
 
 ## Back-end
