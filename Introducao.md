@@ -4,21 +4,20 @@
 
 ## O que você vai aprender
 
-- O que é um Compilador
-- Qual é a diferença entre Compiladores e Interpretadores
-- Quais são as fases de um Compilador
+- O que é um Compilador.
+- Qual é a diferença entre Compiladores e Interpretadores.
+- Quais são as fases de um Compilador.
 
 ## Pré-requisitos
 
-- Noções básicas de FTC
+- Noções básicas de Fundamentos Teóricos da Computação.
 
 ## Definição
 
-Até então na programação o que temos feito é ser usuários de Linguagens de Programação, como C, C++, Java, Python e entre outros. Agora
-nessa disciplina, iremos aprender como fazer a nossa própria Linguagem, a partir de um software chamado de Compilador.
+Até então na programação o que temos feito é sermos usuários de Linguagens de Programação como C, C++, Java, Python e entre outros. Agora
+neste microfundamento, iremos aprender como fazer a nossa própria Linguagem a partir de um software chamado de Compilador.
 
-Um Compilador é um programa que converte um programa escrito em uma linguagem fonte, em um terceiro programa escrito em linguagem 
-alvo (Assembly ou L.M)  L.M = Linguagem de Máquina
+Um Compilador é um programa que converte um programa escrito em uma linguagem fonte (como C++), em um terceiro programa escrito em linguagem alvo (Assembly ou L.M.)  L.M. = Linguagem de Máquina.
 
 ```mermaid
 flowchart LR
@@ -34,7 +33,7 @@ flowchart LR
     id2 --> id4
 ```
 
-Vamos ver de perto um exemplo disto, aqui embaixo você irá encontrar um código talvez bem familiar.
+Vamos ver de perto um exemplo disso, aqui embaixo você irá encontrar um código talvez bem familiar.
 
 ```c
 #include<stdio.h>
@@ -43,8 +42,9 @@ int main() {
   printf("Hello world!\n");
   return 0;
 }
-``` 
-O que temos neste exemplo é um código na linguagem C, que no nosso caso é a chamada **Linguagem Fonte** e o seu arquivo é o nosso **Programa Fonte**. Para a máquina essa sopa de letrinhas não possui nenhum significado, e podemos verificar isso, rodando o comando **file** do Linux neste arquivo, e verificando que o mesmo é apenas um arquivo de texto.
+```
+
+O que temos nesse exemplo é um código na linguagem C, que no nosso caso é a chamada **Linguagem Fonte** e o seu arquivo é o nosso **Programa Fonte**. Para a máquina essa sopa de letrinhas não possui nenhum significado, e podemos verificar isso, rodando o comando **file** do Linux neste arquivo, e verificando que o mesmo é apenas um arquivo de texto.
 
 ``` 
 $ file main.c
