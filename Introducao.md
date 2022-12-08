@@ -20,7 +20,19 @@ nessa disciplina, iremos aprender como fazer a nossa própria Linguagem, a parti
 Um Compilador é um programa que converte um programa escrito em uma linguagem fonte, em um terceiro programa escrito em linguagem 
 alvo (Assembly ou L.M)  L.M = Linguagem de Máquina
 
-![Diagrama-de-um-compilador](https://user-images.githubusercontent.com/9157977/206319310-5e13c46f-f349-4fc7-8af8-3ee1878b0c17.jpg)
+```mermaid
+flowchart LR
+    id1[\Programa Fonte/]
+    id2(Compilador)
+    id3[\Programa Alvo/]
+    id4>Mensagem de Erro]
+
+    subgraph Compilação
+    id1 --> id2
+    id2 --> id3
+    end
+    id2 --> id4
+```
 
 Vamos ver de perto um exemplo disto, aqui embaixo você irá encontrar um código talvez bem familiar.
 
