@@ -106,6 +106,8 @@ flowchart TD
 
     Tab[(Gerenciador da \n Tabela de Símbolos)]
 
+    Inicio((Ponto Inicial))
+
     subgraph FrontEnd [" Front End (Vanguarda) "]
     direction LR
     B --> C
@@ -128,9 +130,19 @@ flowchart TD
         Tab
     end 
 
+    subgraph Gerenciadores [" "]
+        Tabela
+        Erros 
+    end 
+
     subgraph Compilador [" Compilador "]
+        direction LR
+        Inicio --> FrontEnd
         FrontEnd --> MiddleEnd
         MiddleEnd --> BackEnd
+        Gerenciadores <--> FrontEnd
+        Gerenciadores <--> MiddleEnd
+        Gerenciadores <--> BackEnd
     end 
 
     subgraph core [" "]
@@ -142,15 +154,6 @@ flowchart TD
         Err 
     end 
 
-    subgraph Gerenciadores
-        Tabela
-        Erros 
-    end 
-
-
-    Gerenciadores <--> Compilador  
-
-
     
 
     style B fill:#43f,stroke:#333,stroke-width:4px
@@ -161,29 +164,156 @@ flowchart TD
     style G fill:#543,stroke:#333,stroke-width:4px
     style Err fill:#a33,stroke:#333,stroke-width:4px
     style Tab fill:#3489,stroke:#333,stroke-width:4px
+
 ```
 
 Agora que temos uma noção geral do compilador, podemos agora falar sobre as fases do Compilador. O Compilador pode ser dividido em três seções, o Front-End (Vanguarda), o Middle-End e o Back-End (Retaguarda).
 
 ## Front-End
 
-O Front-End possui dois componentes, o Analisador Léxico e o Analisador Sintático
+O Front-End possui três componentes, o Analisador Léxico, Analisador Sintático e o Analisador Semântico
 
 ### Analisador Léxico
 
-O Analisador Léxico, também chamado de "A fase de Scanning" é a parte onde o Compilador irá fazer a tokenização do código fonte.
+O Analisador Léxico, também chamado de "A fase de Scanning" é a parte onde o Compilador irá fazer a tokenização do código fonte. A sequência  de  caracteres  do programa-fonte é lida da esquerda para a direita em busca de elementos da linguagem (tokens). Responsável em identificar lexemas no programa-fonte, verificando a correção “ortográfica” do código e os tokens correspondentes.
+
+Exemplo de erro do Analisador Léxico seria esse código:
+
+```c
+#include<stdio.h>
+
+int main() {
+    int a = 10.0.0;
+    printf("%d\n", a);
+    return 0;
+}
+``` 
+
+Não existe o lexema "10.0.0" na linguagem C.
+
+#### Lexemas
+
+Lexemas é a forma na qual um token é escrito no programa fonte. Quando o programa for analisado, os lexemas serão lidos e então convertidos para tokens que o programa fonte pode compreender.
+
+Lexemas podem ser escritos ou de forma literal ou usando regex:
+
+| tokens | lexemas |
+---------|----------
+id | (\c $\cup$ _)(\c $\cup$ \d  $\cup$ _)*
+int | "int"
+float | "float"
+\+ | \+
+inc | ++ 
+
+Obs.: id = identificador
+
+Outras observações importantes:
+
+* Espaço em branco não é token e sim um delimitador léxico
+* Quebra-de-linha em algumas linguagens é um Token, em outras linguagens não
+* Comentário não é token, nem a mensagem, nem os seus delimitadores
+* Diretivas (#define) (#include) são comandos para o compilador ( não tokens )
+
 
 ### Analisador Sintático
+
+Também chamado de Análise Hierárquica, essa fase é responsável em agrupar os tokens em estruturas hierárquicas seguindo as regras de produção da gramática. Responsável por agrupar os itens léxicos (tokens) em estruturas hierárquicas. Cada token identificado pelo Analisador Léxico é armazenado na tabela de símbolos e sua posição verificada através da gramática.
+
+Exemplo de erro do Analisador Léxico seria esse código
+
+```c
+#include<stdio.h>
+
+int main() {
+    int b = 5;
+    int a = 3;
+    int c = + a b;
+    printf("O resultado de a + b é %d", c);
+    return 0;
+}
+``` 
+De acordo com a gramática, o + deveria vir entre os identificadores **a** e **b**, porém isso não acontece, gerando um erro.
+
+### Analisador Semântico
+
+Nesta fase, os componentes do programa são checados para se garantir sentido às estruturas. Responsável por verificar a coerência das estruturas, quanto ao seu contexto, tipos de operandos e operadores, declaração de variáveis e constantes, entre outros.
+
+Exemplo de erro do Analisador Semântico seria:
+
+```c
+#include<stdio.h>
+
+int main() {
+    int a = 10.7;
+    printf("%d\n", a);
+    return 0;
+}
+``` 
+
+Neste caso, temos uma incompatibilidade de tipos, pois o identificador é do tipo "int" mas o valor atribuído é um "float".
 
 ## Middle-end
 
 ### Geração de Código Intermediário
 
+Responsável por representar as estruturas  sintáticas  encontradas  na  forma  de  um  programa  para uma  máquina  abstrata.  Esta  representação  intermediária facilita a conversão do programa fonte para o programa alvo. 
+
+```mermaid
+classDiagram
+class LinguagemCLike
+LinguagemCLike : int a = 5
+LinguagemCLike : int b = 3
+LinguagemCLike : int c = 7
+LinguagemCLike : int d = a + b * c
+
+direction LR
+LinguagemCLike --> CodigoIntermediario
+
+class CodigoIntermediario 
+CodigoIntermediario 
+CodigoIntermediario  : a = 5
+CodigoIntermediario  : b = 3
+CodigoIntermediario  : c = 7
+CodigoIntermediario  : t1 = b * c
+CodigoIntermediario  : t2 = t1 + a
+CodigoIntermediario  : d = t2
+
+```
+
+Obs.: t1 e t2 são variáveis temporárias
+
 ### Otimização de Código
+
+Permite melhorar a representação intermediária, com o objetivo de produzir um código final mais eficiente. 
+
+```mermaid
+classDiagram
+
+class CodigoIntermediario 
+CodigoIntermediario  : b = 3
+CodigoIntermediario  : c = 7
+CodigoIntermediario  : t1 = b * c
+CodigoIntermediario  : d1 = t1
+CodigoIntermediario  : t1 = d1 
+CodigoIntermediario  : t2 = t1+3
+CodigoIntermediario  : d = t2
+
+direction LR
+CodigoIntermediario --> OtimizacaoPeephole
+
+class OtimizacaoPeephole
+OtimizacaoPeephole  : b = 3
+OtimizacaoPeephole  : c = 7
+OtimizacaoPeephole  : t1 = b * c
+OtimizacaoPeephole  : t2 = t1+3
+OtimizacaoPeephole  : d = t2
+```
 
 ## Back-end
 
 ### Gerador de Código
+
+Realiza a conversão do código intermediário para o código alvo. 
 
 # "Primos" do Compilador
 
