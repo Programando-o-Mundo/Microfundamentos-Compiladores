@@ -93,7 +93,68 @@ Nós não iremos entrar em grande detalhe sobre o funcionamento desses programas
 
 ## Fases do Compilador
 
-![Diagrama sem nome (2)](https://user-images.githubusercontent.com/9157977/206325296-ca6f7132-77e3-468e-98af-75f2e7495c25.jpg)
+```mermaid
+flowchart TD
+    B(Analisador Léxico)
+    A{Programa Fonte} 
+    C(Analisador Sintâtico)
+    D(Analisador Semântico)
+    E(Gerador de Código Intermediário)
+    F(Otimizador de Código)
+    G(Gerador de Código)
+    H{Programa Alvo}
+
+    A --> B
+    subgraph FrontEnd ["Front End (Vanguarda)"]
+    direction LR
+    B --> C
+    C --> D
+    end 
+
+    subgraph MiddleEnd ["Middle End"]
+    direction LR
+    D --> E
+    E --> F
+    end
+
+    subgraph BackEnd ["Back End"]
+    direction LR
+    F --> G 
+    end 
+    
+    G --> H
+
+    Tab[(Gerenciador da \n Tabela de Símbolos)]
+    Tab <---> FrontEnd
+    Tab <---> MiddleEnd
+    Tab <---> BackEnd
+
+    Err[(Gerenciador de \n Erros)]
+    Err <--> FrontEnd
+    Err <--> MiddleEnd
+    Err <--> BackEnd
+
+    subgraph core [" "]
+        A
+        FrontEnd
+        MiddleEnd
+        BackEnd
+    end 
+
+    subgraph TabelaSimbolos [" "]
+        Tab
+    end
+    
+
+    style B fill:#43f,stroke:#333,stroke-width:4px
+    style C fill:#43f,stroke:#333,stroke-width:4px
+    style D fill:#43f,stroke:#333,stroke-width:4px
+    style E fill:#164f,stroke:#333,stroke-width:4px
+    style F fill:#164f,stroke:#333,stroke-width:4px
+    style G fill:#543,stroke:#333,stroke-width:4px
+    style Err fill:#a33,stroke:#333,stroke-width:4px
+    style Tab fill:#3489,stroke:#333,stroke-width:4px
+```
 
 Agora que temos uma noção geral do compilador, podemos agora falar sobre as fases do Compilador. O Compilador pode ser dividido em três seções, o Front-End (Vanguarda), o Middle-End e o Back-End (Retaguarda).
 
