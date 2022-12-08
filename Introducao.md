@@ -95,55 +95,62 @@ Nós não iremos entrar em grande detalhe sobre o funcionamento desses programas
 
 ```mermaid
 flowchart TD
-    B(Analisador Léxico)
-    A{Programa Fonte} 
-    C(Analisador Sintâtico)
-    D(Analisador Semântico)
-    E(Gerador de Código Intermediário)
-    F(Otimizador de Código)
+    B(Analisador \n Léxico)
+    A{Programa \n Fonte} 
+    C(Analisador \nSintâtico)
+    D(Analisador \nSemântico)
+    E(Gerador de Código \n Intermediário)
+    F(Otimizador de \nCódigo)
     G(Gerador de Código)
-    H{Programa Alvo}
+    H{Programa \n Alvo}
 
-    A --> B
-    subgraph FrontEnd ["Front End (Vanguarda)"]
+    Tab[(Gerenciador da \n Tabela de Símbolos)]
+
+    subgraph FrontEnd [" Front End (Vanguarda) "]
     direction LR
     B --> C
     C --> D
     end 
 
-    subgraph MiddleEnd ["Middle End"]
+    subgraph MiddleEnd [" Middle End"]
     direction LR
-    D --> E
     E --> F
     end
 
-    subgraph BackEnd ["Back End"]
+    subgraph BackEnd [" Back End (Retaguarda) "]
     direction LR
-    F --> G 
+    G 
     end 
-    
-    G --> H
-
-    Tab[(Gerenciador da \n Tabela de Símbolos)]
-    Tab <---> FrontEnd
-    Tab <---> MiddleEnd
-    Tab <---> BackEnd
 
     Err[(Gerenciador de \n Erros)]
-    Err <--> FrontEnd
-    Err <--> MiddleEnd
-    Err <--> BackEnd
 
-    subgraph core [" "]
-        A
-        FrontEnd
-        MiddleEnd
-        BackEnd
+    subgraph Tabela [" "]
+        Tab
     end 
 
-    subgraph TabelaSimbolos [" "]
-        Tab
-    end
+    subgraph Compilador [" Compilador "]
+        FrontEnd --> MiddleEnd
+        MiddleEnd --> BackEnd
+    end 
+
+    subgraph core [" "]
+        A --> Compilador
+        Compilador --> H
+    end 
+
+    subgraph Erros [" "]
+        Err 
+    end 
+
+    subgraph Gerenciadores
+        Tabela
+        Erros 
+    end 
+
+
+    Gerenciadores <--> Compilador  
+
+
     
 
     style B fill:#43f,stroke:#333,stroke-width:4px
