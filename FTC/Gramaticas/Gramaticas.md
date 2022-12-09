@@ -27,6 +27,8 @@ S → aB
 
 B → b
 
+## Variáveis
+
 Variáveis geralmente são sempre representadas por caracteres em maiúsculo, então { S, B } neste caso são as nossas variáveis.
 
 **S** → a**S**b
@@ -34,6 +36,8 @@ Variáveis geralmente são sempre representadas por caracteres em maiúsculo, en
 **S** → a**B**
 
 **B** → b
+
+## Terminais
 
 Já as terminais são nada mais que os símbolos do nosso alfabeto, neste caso, o nosso alfabeto pode ser definido como { a, b } , já que são os únicos terminais presentes na gramática.
 
@@ -43,13 +47,17 @@ S → **a**B
 
 B → **b**
 
-As produções são os itens produzidos pelas variáveis, por exemplo, neste caso, quando dizemos que S produz “aSb” dizemos que isto é uma produção.
+## Produções
+
+As produções são os itens produzidos pelas variáveis, por exemplo, neste caso, quando dizemos que S produz “aSb” dizemos que isto é a produçãode S.
 
 **S → aSb**
 
 **S → aB**
 
 **B → b**
+
+## Variável de partida
 
 Por fim, toda gramática precisa de uma Variável de partida que é onde toda gramática será inicializada, ou seja, toda gramática precisa de um ponto de partida.
 
@@ -61,10 +69,9 @@ B → b
 
 ## Qual é o objetivo das gramáticas?
 
+Dado uma linguagem qualquer, teremos dois elementos importantes, primeiro teremos os mecanismos aceitadores que seriam os nossos autômatos finitos, e os mecanismos geradores, que seriam as gramáticas. As gramáticas no final das contas, tem como objetivo a geração de palavras válidas para a minha linguagem.Tipos de gramáticas
 
-Dado uma linguagem qualquer, teremos dois elementos importantes, primeiro teremos os mecanismos aceitadores que seriam os nossos autômatos finitos, e os mecanismos geradores, que seriam as gramáticas. As gramáticas no final das contas, tem como objetivo a geração de palavras válidas para a minha linguagem.
-Tipos de gramáticas
-Gramática Linear
+## Gramática Linear
 
 Uma gramática é dita linear quando possuem no máximo um símbolo não terminal (ou seja, uma variável) no lado direito de suas produções.
 
@@ -79,7 +86,8 @@ S → b
 observe que no lado direito da produção (depois da →) possuímos apenas uma variável, não importa qual variável seja essa, o importante é a quantidade.
 
 Dentro das gramáticas lineares, temos dois tipos mais conhecidos de gramáticas. 
-Gramática Linear à esquerda
+
+## Gramática Linear à esquerda
 
 Quando uma gramática é linear para a esquerda, suas produções possuem as variáveis terminais a esquerda das variáveis,ou seja:
 
@@ -88,7 +96,8 @@ A → Ba | b | b
 A → Ab | Bb | a
 
 Perceba que as terminais {a,b} estão sempre do lado esquerdo das variáveis.
-Gramática Linear à direita
+
+## Gramática Linear à direita
 
 Seguindo a mesma lógica anterior, gramáticas que são lineares a direita, possuem seus terminais a direita das variáveis, ou seja:
 
