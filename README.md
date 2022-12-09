@@ -8,10 +8,9 @@ na internet que consiga explicar bem o conteúdo. Por esse motivo, decidi criar 
 agrupar todos os materiais pertinentes para o aprendizado da disciplina, desde a fundamentação em FTC(Fundamentos
 Teóricos da Computação), até a Geração de Código em Assembly.
 
-Pense nesse repositório como apenas um lugar para auxiliar nos seus estudos. Não se esqueçam de olhar a biblioteca de referência original sugerida
-pelo seu professor. 
+Pense nesse repositório como apenas um lugar para auxiliar nos seus estudos. 
 
-Mas caso alguns de vocês queiram as minhas referências para a disciplina:
+Também não se esqueçam de olhar a biblioteca de referência original sugerida pelo seu professor. as caso alguns de vocês queiram as minhas referências para a disciplina:
 - [Compiladores: Princípios, Técnicas e Ferramentas](https://www.amazon.com.br/Compiladores-Princ%C3%ADpios-T%C3%A9cnicas-Alfred-Aho/dp/8521610572)
 - [Playlist de Compiladores do Professor Judson Santiago](https://www.youtube.com/playlist?list=PLX6Nyaq0ebfhI396WlWN6WlBm-tp7vDtV)
 - [Slides de Compiladores da UFMG](https://homepages.dcc.ufmg.br/~bigonha/Cursos/comp-slides-p4.pdf)
