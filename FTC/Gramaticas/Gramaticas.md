@@ -49,7 +49,7 @@ B → **b**
 
 ## Produções
 
-As produções são os itens produzidos pelas variáveis, por exemplo, neste caso, quando dizemos que S produz “aSb” dizemos que isto é a produçãode S.
+As produções são os itens produzidos pelas variáveis, por exemplo, neste caso, quando dizemos que S produz “aSb” dizemos que isto é a produção de S.
 
 **S → aSb**
 
