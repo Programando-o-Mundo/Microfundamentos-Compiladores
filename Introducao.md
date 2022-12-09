@@ -93,7 +93,7 @@ Aqui, quando executamos esse comando estamos rodando o nosso programa, o interva
 
 Muitos de vocês já devem ter utilizado linguagens com Python, Java, Javascript e entre outras. Essas linguagens possuem um programa chamado de Interpretador.
 
-Diferente do compilador que tem como objetivo gerar um arquivo escrito na Linguagem Alvo, o Interpretador é um programa que lê um arquivo (código fonte) e interpreta tal arquivo e converte em código executável linha por linha.
+Diferente do compilador que tem como objetivo gerar um arquivo escrito na Linguagem Alvo, o Interpretador é um programa que lê um arquivo (código fonte) e interpreta tal arquivo linha-por-linha e converte em código executável.
 
 Nós não iremos entrar em grande detalhe sobre o funcionamento desses programas, pois não é o foco da disciplina, a coisa mais importante que você precisa entender aqui, é diferente do compilador, o Interpretador não irá gerar um arquivo com a Linguagem Alvo, pois o código será executado na medida que for analisado. Além disso, o tempo de compilação e execução são diferentes, aqui o tempo de compilação e execução são os mesmos.
 
@@ -262,7 +262,7 @@ Neste caso, temos uma incompatibilidade de tipos, pois o identificador é do tip
 
 ## Middle-end
 
-As análises feitas pelo Front-End implica na construção de código, mas não de código de máquina.
+Aqui temos a segunda parte da compilação, o Middle-end, que possui em si duas fases, a Geração de Código Intermediário e a Otimização de Código
 
 ### Geração de Código Intermediário
 
@@ -355,8 +355,19 @@ Além do Compilador, seria interessante você entender mais dois programas que s
 
 ## Montador
 
-O primeiro deles é o montador, alguns compiladores possuem um montador embutido, mas a sua função é traduzir o código gerador pelo Compilador (Assembly) e transformar em uma representação intermediária chamada de código objeto. Este código de montagem é uma versão mnemônica do código de máquina, onde é utilizado nomes em lugar de código de máquina. Para transformar esse código, em um programa que a máquina possa ler, iremos usar o segundo programa, o Linkeditor
+O primeiro deles é o montador, também chamado de Assembler. Sua função é traduzir o código gerador pelo Compilador (Assembly) e transformar em uma representação intermediária chamada de código objeto. Este código de montagem é uma versão mnemônica do código de máquina, onde é utilizado nomes em lugar de código de máquina. 
+
+Um exemplo muito famoso, e inclusive usado até hoje, é o [NASM](https://www.nasm.us/)
 
 ## Linkeditor 
 
-O Linkeditor, Ligador ou Editor de Ligações tem como objetivo permite criar um único módulo de carga, a partir de vários arquivos de código objeto. Isso acontece pois vamos supor que estamos trabalho em um projeto com vários arquivos diferentes, cada um deles vai gerar o seu próprio arquivo de código objeto. No final da compilação, cabe ao Linkeditor pegar todos esses arquivos e juntá-los em um executável apenas.
+Para transformar esse código, em um programa que a máquina possa ler, iremos usar o segundo programa, o Linkeditor, que tem como objetivo criar um único módulo de carga (executável), a partir de vários arquivos de código objeto. Isso acontece pois vamos supor que estamos trabalho em um projeto com vários arquivos diferentes, cada um deles vai gerar o seu próprio arquivo de código objeto. No final da compilação, cabe ao Linkeditor pegar todos esses arquivos e juntá-los em um executável apenas.
+
+## Conclusão
+
+Ufa, foi até bastante coisa para apenas uma aula só, mas acredito que agora vocês tenham conseguido um panorama a respeito de todos os importantes tópicos que iremos ver nesse microfundamentos. Aproveite também para dar uma olhada no nosso material extra, muito obrigado e até a próxima.
+
+### Links úteis
+
+- [Aula introdutória de Compiladores](https://youtu.be/Q5lLGCOSYIk)
+- [Aula completa de Compiladores da UFMG](https://homepages.dcc.ufmg.br/~bigonha/Cursos/comp-slides-p4.pdf)
