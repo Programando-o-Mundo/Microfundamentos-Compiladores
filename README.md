@@ -8,7 +8,10 @@ na internet que consiga explicar bem o conteúdo. Por esse motivo, decidi criar 
 agrupar todos os materiais pertinentes para o aprendizado da disciplina, desde a fundamentação em FTC(Fundamentos
 Teóricos da Computação), até a Geração de Código em Assembly.
 
-Pense nesse repositório como apenas um lugar para auxiliar nos seus estudos.
+Pense nesse repositório como apenas um lugar para auxiliar nos seus estudos. Não se esqueçam de olhar a biblioteca de referência original sugerida
+pelo seu professor. 
+
+Uma referência que eu particularmente recomendo bastante que inclusive foi de grande auxílio para fazer esses microfundamentos é o livro [Compiladores: Princípios, Técnicas e Ferramentas](https://www.amazon.com.br/Compiladores-Princ%C3%ADpios-T%C3%A9cnicas-Alfred-Aho/dp/8521610572)
 
 Se você quiser contribuir para esse repositório, dê uma olhada depois no arquivo COMO-CONTRIBUIR.md
 
