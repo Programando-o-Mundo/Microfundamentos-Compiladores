@@ -1,9 +1,8 @@
 # Microfundamentos-Compiladores
 
-Um compilador é um software dedicado para traduzir um programa de uma linguagem textual 
-para outra linguagem, tipicamente sendo traduzida para código de máquina.
+Olá e seja bem vindos ao Microfundamentos de Compiladores
 
-Essa disciplina tem a fama de ser bem difícil e as vezes pode ser difícil encontrar material
+Essa disciplina tem a fama de ser bem difícil e as vezes pode ser difícil encontrar material bom
 na internet que consiga explicar bem o conteúdo. Por esse motivo, decidi criar esse repositório para 
 agrupar todos os materiais pertinentes para o aprendizado da disciplina, desde a fundamentação em FTC(Fundamentos
 Teóricos da Computação), até a Geração de Código em Assembly.
