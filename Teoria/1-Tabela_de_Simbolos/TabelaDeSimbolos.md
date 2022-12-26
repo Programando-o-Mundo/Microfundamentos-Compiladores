@@ -29,3 +29,4 @@ Tais símbolos armazenados na tabela são coletados pelas fases de análise do c
 # Links úteis
 
 - [Slides de Compiladores da UFMG(pg 20-32)](https://homepages.dcc.ufmg.br/~bigonha/Cursos/comp-slides-p4.pdf)
+- [Compiladores | Aula 08 - Tabela de Símbolos | Escopos | Blocos Aninhados | Implementação](https://youtu.be/k2jm1uplI5Y)
