@@ -9,7 +9,7 @@
 
 ## Pré-requisitos
 
-- Ter visto a aula de Introdutória de Compiladores 
+- [Introdução a Compiladores](../../Introducao.md)
 
 ## Definição
 
