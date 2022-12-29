@@ -142,4 +142,21 @@ podem ter sinal negativo.
 lista_expressões)    ,  onde  lista_expressões  é  uma  lista  de  uma  ou  mais  expressões 
 numéricas,  caracteres  ou  strings,  separadas  por  vírgulas.  A  última  forma,  quando 
 executada, causa a quebra de linha após a impressão. 
- 
+
+Eis aqui um exemplo de um programa escrito na nossa linguagem "X"
+
+```c
+string nome;
+
+write("Digite seu nome: ");
+readln(nome);
+
+float percentual;
+int i:=1;
+const N=10;
+While (i<=N) {
+  percentual:=float(i)/N;
+  writeln(percentual,": Ola' ",nome);
+  i:=i+1;
+}
+``` 
