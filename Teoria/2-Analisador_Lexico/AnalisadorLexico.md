@@ -34,3 +34,8 @@ Tipo - Pontuação; Lexema - ";"
 O lexer leria a entrada caractere por caractere e os agruparia em tokens com base nas regras lexicais que foram definidas. Nesse caso, as regras podem especificar que os identificadores consistem em uma letra seguida por zero ou mais letras ou dígitos, os literais são sequências de dígitos e os operadores são determinados caracteres especiais, como '+' e '='.
 
 Uma vez que a entrada tenha sido dividida em tokens, ela pode ser passada para outras partes do compilador ou interpretador, como o analisador sintático, que usará os tokens para construir uma árvore sintática ou realizar outras operações.
+
+# Línks úteis
+
+- [Compilador para humanos - Análise Léxica](https://johnidm.gitbooks.io/compiladores-para-humanos/content/part1/lexical-analysis.html)
+- [Aula 06 - Análise Léxica - Judson Santiago](https://youtu.be/gzY-CTY4msg)
