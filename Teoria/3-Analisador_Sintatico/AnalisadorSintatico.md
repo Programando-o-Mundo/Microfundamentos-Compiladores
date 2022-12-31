@@ -25,3 +25,10 @@ Existem muitos tipos diferentes de analisadores, mas a maioria deles segue um pr
   **5**-Se o token de entrada atual não for válido, o analisador normalmente relatará um erro e interromperá a análise.
 
 Analisadores Sintáticos são um componente crítico de compiladores e interpretadores, pois são responsáveis por garantir que o programa de entrada esteja sintaticamente correto e possa ser processado corretamente pelo restante do compilador ou interpretador. Existem muitos algoritmos e técnicas que podem ser usados para implementar um analisador sintático, incluindo analisadores descendentes (como analisadores descendentes recursivos) e analisadores ascendentes (como analisadores LL e analisadores LR).
+
+# Línks úteis
+
+- [Compiladores para Humanos - Análise Sintática](https://johnidm.gitbooks.io/compiladores-para-humanos/content/part1/syntax-analysis.html)
+- [Introdução a Análise Sintática](https://youtu.be/SegY2UEPCV4)
+- [Algoritmo de Análise Sintática descendente recursivo](https://youtu.be/P2IhETKYM7U)
+- [Aula 04 - Análise Sintática - Judson Santiago](https://youtu.be/FE5QwYEADak)
