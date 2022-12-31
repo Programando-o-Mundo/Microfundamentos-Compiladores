@@ -30,7 +30,7 @@ A análise semântica é normalmente realizada após a análise léxica e análi
 
 # Links úteis
 
-- [Semantic Analysis in Compiler Design - Uma aula do GeeksForGeeks](https://www.geeksforgeeks.org/semantic-analysis-in-compiler-design/)
+- [Compiladores para humanos - Análise Semântica](https://johnidm.gitbooks.io/compiladores-para-humanos/content/part1/semantic-analysis.html)
 - [Análise Semântica - Vídeo do "Aulas de Computação"](https://youtu.be/UU6XC17kEDs)
 - [Aula 10 - Análise Semântica - Judson Santiago](https://www.youtube.com/watch?v=msv_0QqXz7s&list=PLX6Nyaq0ebfhI396WlWN6WlBm-tp7vDtV&index=12)
 
