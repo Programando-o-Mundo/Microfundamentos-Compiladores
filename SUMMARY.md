@@ -1,7 +1,7 @@
-# Sumário
+# Table of contents
 
-* [COMO CONTRIBUIR](CONTRIBUTE.md)
-* [Microfundamentos Compiladores](README.md)
+* [COMO CONTRIBUIR](README.md)
+* [Microfundamentos Compiladores](<README (1).md>)
 * [FTC](FTC/README.md)
   * [Autômato finito determinístico](FTC/Automatos/README.md)
   * [Expressões regulares](FTC/Expressoes-regulares/README.md)
@@ -33,8 +33,7 @@
 * [Back-End - Geração de Código Assembly e Ambientes em Tempo de Execução](Back-End/README.md)
   * [Geração de Código](Back-End/Geracao-de-Codigo/README.md)
     * [Teoria](Back-End/Geracao-de-Codigo/Teoria.md)
-    * [Assembly x86_64](Back-End/Geracao-de-Codigo/README.md)
-      * [Introdução](Back-End/Geracao-de-Codigo/Introducao.md)
-    * [Implementação](Back-End/Geracao-de-Codigo/Implementacao.md)
+    *
+    * [Implementação](back-end/geracao-de-codigo/implementacao.md)
   * [Ambientes em Tempo de Execução](Back-End/Ambientes-em-tempo-de-execucao/README.md)
     * [Teoria](Back-End/Ambientes-em-tempo-de-execucao/Teoria.md)
