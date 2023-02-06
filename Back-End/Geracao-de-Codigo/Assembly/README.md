@@ -1,3 +1,1 @@
 # Assembly
-
-Atenção ⚠️! Ainda em construção 👷....
