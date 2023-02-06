@@ -1,5 +1,7 @@
 # Implementando a Tabela de Simbolos
 
+Atenção ⚠️! Ainda em construção 👷....
+
 ## Você vai aprender...
 
 - Como implementar a Tabela de Símbolos usando Hash
