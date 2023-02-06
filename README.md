@@ -1,6 +1,10 @@
-# Microfundamentos-Compiladores
+## Atenção ⚠️! 
 
-Olá e seja bem vindos ao Microfundamentos de Compiladores
+A grande maioria dessas aulas ainda não estão prontas, e algumas precisam de passar por algumas revisões antes que possam ser usadas
+para ensino. Por conta disso, olhe o conteúdo desse repositório com cuidado. Se você puder contribuir de alguma forma para esse repositório,
+eu ficaria muito agradecido.
+
+# Microfundamentos de Compiladores
 
 Essa disciplina tem a fama de ser bem difícil e as vezes pode ser difícil encontrar material bom
 na internet que consiga explicar bem o conteúdo. Por esse motivo, decidi criar esse repositório para 
