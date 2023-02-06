@@ -1,7 +1,5 @@
 # Como contribuir para o Microfundamentos
 
-# Gustavo Lopes Rodrigues.
-
 Você já teve alguma ideia que pode contribuir para o repositório? Se sim, seja bem vindo, aqui eu irei mostrar para você como criar 
 um. 
 
