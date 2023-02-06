@@ -33,7 +33,6 @@
 * [Back-End - Geração de Código Assembly e Ambientes em Tempo de Execução](Back-End/README.md)
   * [Geração de Código](Back-End/Geracao-de-Codigo/README.md)
     * [Teoria](Back-End/Geracao-de-Codigo/Teoria.md)
-    *
-    * [Implementação](back-end/geracao-de-codigo/implementacao.md)
+    * [Implementação](Back-end/geracao-de-codigo/implementacao.md)
   * [Ambientes em Tempo de Execução](Back-End/Ambientes-em-tempo-de-execucao/README.md)
     * [Teoria](Back-End/Ambientes-em-tempo-de-execucao/Teoria.md)
