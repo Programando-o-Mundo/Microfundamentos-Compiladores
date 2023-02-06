@@ -1,5 +1,7 @@
 # Analisador Sintático - a segunda fase da Vanguarda
 
+Atenção ⚠️! Ainda em construção 👷....
+
 ## O que você vai aprender...
 
 - O que é um Analisador Sintático
