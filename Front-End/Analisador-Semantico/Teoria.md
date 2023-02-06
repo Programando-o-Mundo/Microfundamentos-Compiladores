@@ -1,5 +1,7 @@
 # Analisador Semântico - a terceira fase da Vanguarda
 
+Atenção ⚠️! Ainda em construção 👷....
+
 ## O que você vai aprender...
 
 - O que é o Analisador Semântico
