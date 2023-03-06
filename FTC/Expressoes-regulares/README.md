@@ -80,3 +80,8 @@ Ao usar essa expressão regular em um compilador, o compilador pode reconhecer i
 
 ## Conclusão
 Expressões regulares são uma ferramenta poderosa para buscar e manipular informações em um texto. Elas podem ser usadas em uma variedade de linguagens de programação e aplicativos e são escritas usando caracteres especiais que representam padrões de texto. Espero que esta aula tenha sido útil para você entender melhor o que são expressões regulares e como usá-las para buscar padrões específicos em um texto.
+
+## Links úteis
+
+- [Expressões regulares em Javascript, definição, usos, e exemplos](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [Expressões regulares em 100 segundos](https://www.youtube.com/watch?v=sXQxhojSdZM)
