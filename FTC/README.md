@@ -12,5 +12,7 @@ disciplina de Compiladores:
 * Expressões Regulares
 * Gramáticas regulares e livres de contexto
 
-Uma recomendação de aula para aprender FTC no geral é esta:
-https://homepages.dcc.ufmg.br/~msalvim/?page_id=631
+Uma recomendação de aula para aprender FTC no geral são essas:
+
+- [Material de estudo da UFMG](https://homepages.dcc.ufmg.br/~nvieira/cursos/ftc/a12s1/material.html)
+- [Aulas de Teoria da Computação do canal Aulas de Computação](https://youtube.com/playlist?list=PL0Z-gyL9saMfoCGiX28ZTKSHsYU1Vm-Jj)
