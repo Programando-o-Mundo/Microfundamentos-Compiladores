@@ -85,3 +85,5 @@ Expressões regulares são uma ferramenta poderosa para buscar e manipular infor
 
 - [Expressões regulares em Javascript, definição, usos, e exemplos](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Regular_Expressions)
 - [Expressões regulares em 100 segundos](https://www.youtube.com/watch?v=sXQxhojSdZM)
+- [Ferramenta para testar e experimentar com regex](https://regexr.com/)
+- [Papel cola para Regex](https://fireship.io/lessons/regex-cheat-sheet-js/)
