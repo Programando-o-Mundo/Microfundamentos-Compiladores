@@ -3,6 +3,8 @@
 ## Você vai aprender
 
 * O que são gramáticas
+* Quais são os componentes de uma gramática
+* Quais são os tipos de gramática
 
 ## Pré-requisitos
 
@@ -103,20 +105,35 @@ A → aA | aB | a
 
 B → bB | aB | b
 
-## Gramáticas regulares (tipo 3)
+## Hierarquia de Chomsky
 
-Uma gramática é dita regular, quando a mesma possui apenas derivação ou para a esquerda ou para a direita, ela não pode misturar derivações.
+A hierarquia de gramáticas de acordo com Chomsky é uma classificação das gramáticas formais em quatro níveis hierárquicos, que são nomeados em homenagem ao linguista Noam Chomsky. Essa hierarquia é útil para entender as propriedades das linguagens que podem ser geradas por cada tipo de gramática.
 
-## Converter Autômato para uma gramática ou vice versa
+Os quatro níveis da hierarquia de gramáticas de Chomsky são:
 
-S → aA
-A → aA | bA | λ
+### Gramáticas tipo 0 (ou gramáticas irrestritas): 
 
-## Gramáticas Livres de Contexto (tipo 2)
+São as gramáticas mais poderosas e permitem gerar qualquer linguagem formal. Essas gramáticas são definidas por um conjunto de regras de produção que não impõem restrições sobre a forma das regras ou a ordem em que elas podem ser aplicadas.
+
+### Gramáticas tipo 1 (ou gramáticas sensíveis ao contexto): 
+
+Essas gramáticas permitem gerar linguagens formais que são sensíveis ao contexto. Isso significa que a estrutura sintática das sentenças geradas por essas gramáticas depende do contexto em que as regras de produção são aplicadas. As regras de produção dessas gramáticas são restritas de tal forma que o lado esquerdo de cada regra deve ter pelo menos um símbolo a mais do que o lado direito.
+
+Observe o exemplo abaixo:
+
+aA → aa
+
+A gramática acima ela não é livre de contexto, pois sua variável a esquerda (A) é acompanhada de um terminal (a), logo a mesma é dependente do contexto na qual ela é inserida.
+
+### Gramáticas tipo 2 (ou gramáticas livres de contexto): 
+
+São gramáticas onde todas as regras de produção são da forma "não-terminal → cadeia de símbolos", onde um não-terminal pode ser substituído por qualquer cadeia de símbolos, independentemente do contexto. Essas gramáticas permitem gerar linguagens formais que podem ser descritas por uma árvore sintática, onde cada não-terminal representa uma subárvore.
 
 São gramáticas caracterizadas pela V → α onde α pertence a expressão (V U T*).
 
 Em outras palavras, quando uma gramática é livre de contexto, suas variáveis no lado esquerdo da produção só possuem a variável em si, e nada mais, elas são independentes, por isso que dizemos que ela é livre ou independente de contexto.
+
+Obs.:  toda gramática que é do tipo 3 (regular) é livre de contexto, porém, nem toda gramática livre de contexto é regular.
 
 Um exemplo disso seria a seguinte gramática:
 
@@ -124,10 +141,20 @@ S → aAb | ab
 
 A → aA | λ
 
-Uma maneira simples de entender isso, seria com uma gramática sensível ao contexto:
+### Gramáticas tipo 3 (ou gramáticas regulares): 
 
-aA → aa
+Essas gramáticas são as mais restritas e geram apenas linguagens regulares. Essas gramáticas são definidas por um conjunto de regras de produção que permitem apenas uma substituição de um único símbolo não-terminal por uma cadeia de símbolos terminais ou um único símbolo terminal. As regras de produção dessas gramáticas são geralmente escritas na forma "não-terminal → terminal" ou "não-terminal → terminal não-terminal".
 
-A gramática acima ela não é livre de contexto, pois sua variável a esquerda (A) é acompanhada de um terminal (a), logo a mesma é dependente do contexto na qual ela é inserida.
+Ou seja, uma gramática é dita regular, quando a mesma possui apenas derivação ou para a esquerda ou para a direita, ela não pode misturar derivações.
 
-Outra coisa importante a notar, é que toda gramática que é do tipo 3 (regular) é livre de contexto, porém, nem toda gramática livre de contexto é regular.
+## Converter Autômato para uma gramática ou vice versa
+
+S → aA
+A → aA | bA | λ
+
+Essa hierarquia de gramáticas é importante porque cada tipo de gramática tem suas próprias propriedades e limitações, o que influencia a capacidade de um programa ou sistema de computação em reconhecer ou gerar uma linguagem formal específica. Por exemplo, as linguagens regulares podem ser facilmente reconhecidas e processadas por autômatos finitos, enquanto as linguagens sensíveis ao contexto podem ser reconhecidas por autômatos de pilha. Já as linguagens livres de contexto e irrestritas exigem algoritmos mais complexos e poderosos para o reconhecimento e processamento.
+
+## Links úteis
+
+- [Teoria da Computação 33 - Introdução as gramáticas formais e exercícios de geração de gramáticas](https://youtu.be/4BKgtnQt1pQ)
+- [Teoria da computação 34 - Tipos de Gramáticas e conversão de Gramáticas para AF's e vice-versa.](https://youtu.be/Y9gYuyP3xkI)
