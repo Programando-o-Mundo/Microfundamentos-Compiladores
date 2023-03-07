@@ -67,9 +67,17 @@ Por fim, toda gramática precisa de uma Variável de partida que é onde toda gr
 
 B → b
 
-## Qual é o objetivo das gramáticas?
+## Qual é a importância das gramáticas?
 
-Dado uma linguagem qualquer, teremos dois elementos importantes, primeiro teremos os mecanismos aceitadores que seriam os nossos autômatos finitos, e os mecanismos geradores, que seriam as gramáticas. As gramáticas no final das contas, tem como objetivo a geração de palavras válidas para a minha linguagem.Tipos de gramáticas
+As gramáticas são importantes na teoria fundamental da computação porque elas fornecem uma maneira formal de descrever as linguagens formais, que são as linguagens que podem ser reconhecidas e geradas por sistemas de computação.
+
+A teoria fundamental da computação estuda a natureza e os limites da computação, bem como as propriedades das linguagens que podem ser geradas ou reconhecidas por sistemas computacionais. As gramáticas fornecem uma ferramenta importante para a descrição formal dessas linguagens, permitindo que os teóricos da computação possam estudar as suas propriedades e limitações.
+
+Além disso, as gramáticas são usadas em muitas áreas da ciência da computação, como a compilação de linguagens de programação, o processamento de linguagem natural, a modelagem de linguagens de comunicação e a representação de conhecimento. Elas também são usadas em linguística, filosofia e outras áreas relacionadas ao estudo da linguagem.
+
+## Tipos de Gramáticas
+
+As gramáticas também são a base de várias classes de linguagens formais, como as linguagens regulares, as linguagens livres de contexto e as linguagens sensíveis ao contexto (que veremos mais a frente). Essas classes de linguagens têm propriedades e limitações diferentes, e podem ser reconhecidas ou geradas por diferentes tipos de sistemas de computação, como autômatos finitos, autômatos de pilha e máquinas de Turing. O estudo das gramáticas é, portanto, uma parte essencial da teoria fundamental da computação e uma ferramenta valiosa para entender as propriedades e limitações dos sistemas de computação e das linguagens que eles podem processar.
 
 ## Gramática Linear
 
