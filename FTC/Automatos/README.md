@@ -84,6 +84,16 @@ anterior do AFD que lê a palavra "int", o nosso alfabeto é composto dos caract
 
 Alfabeto = {'i','n','t'}
 
-## links úteis
+## Compiladores
+
+Os autômatos finitos determinísticos (AFDs) são importantes no contexto de compiladores porque podem ser usados para modelar e reconhecer linguagens regulares. As linguagens regulares são uma classe importante de linguagens formais, que são frequentemente usadas para especificar a sintaxe de linguagens de programação.
+
+Compiladores são programas que traduzem código-fonte de uma linguagem de programação para uma linguagem de baixo nível, como o código de máquina. Um dos principais componentes de um compilador é o analisador léxico, que é responsável por identificar os tokens do código-fonte.
+
+Os AFDs podem ser usados para implementar o analisador léxico de um compilador. O processo envolve criar um AFD que reconheça todos os tokens válidos da linguagem de programação que está sendo compilada. Esse AFD pode ser construído manualmente ou gerado automaticamente a partir de uma especificação formal da linguagem.
+
+Uma vez que o AFD é construído, ele pode ser usado pelo analisador léxico para identificar rapidamente os tokens do código-fonte. O analisador léxico segue as transições do AFD para reconhecer cada token individualmente, tornando o processo de análise léxica muito eficiente.
+
+## Links úteis
 
 [Veja outra aula sobre AFDs](https://edisciplinas.usp.br/pluginfile.php/5586355/mod_resource/content/1/ACH2043-Aula02-Cap1.1-AutomatosFinitosDetermin%C3%ADsticos.pdf)
