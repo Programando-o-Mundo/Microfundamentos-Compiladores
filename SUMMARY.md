@@ -6,6 +6,7 @@
   * [Autômato finito determinístico](FTC/Automatos/README.md)
   * [Expressões regulares](FTC/Expressoes-regulares/README.md)
   * [Gramáticas](FTC/Gramaticas/README.md)
+    * [Gramática LL(1)](FTC/Gramaticas/gramatica-ll1.md)
 * [Introdução a Compiladores - conceitos principais e primeiros passos](Introducao/README.md)
   * [Visão geral e conceitos principais](Introducao/Visao-geral-e-conceitos-principais.md)
   * [Definindo a linguagem que queremos criar](Introducao/Definindo-a-linguagem-que-queremos-criar.md)
