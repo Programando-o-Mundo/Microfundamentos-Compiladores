@@ -95,7 +95,7 @@ graph TD
     A -->|Espaço em branco| A
     A -->|\c U _| B((A))
     B -->|\c U \d U _| B
-    B -->|Diferente de \c U \d U _ \n Retorna caractere| C(((Fim)))
+    B -->|Diferente de \c U \d U _ Retorna caractere| C(((Fim)))
 ```
 
 Mas como é que o Analisador faz isso na prática? Iremos dar uma olhada nisso e mais, na aula de laboratório.
