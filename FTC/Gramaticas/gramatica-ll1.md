@@ -44,13 +44,13 @@ transforma uma gramática recursiva à esquerda em uma gramática equivalente qu
 
 O processo de fatoração à esquerda e substituição envolve os seguintes passos:
 
-Identificar as regras de produção que causam a recursão à esquerda.
+- Identificar as regras de produção que causam a recursão à esquerda.
 
-Fatorar as regras de produção que causam a recursão à esquerda, criando uma nova regra que não tenha recursão à esquerda.
+- Fatorar as regras de produção que causam a recursão à esquerda, criando uma nova regra que não tenha recursão à esquerda.
 
-Substituir a regra original pela nova regra fatorada nas outras regras que a referenciam.
+- Substituir a regra original pela nova regra fatorada nas outras regras que a referenciam.
 
-Repetir os passos 2 e 3 até que não haja mais recursão à esquerda na gramática.
+- Repetir os passos 2 e 3 até que não haja mais recursão à esquerda na gramática.
 
 ### Exemplo
 
