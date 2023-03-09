@@ -26,7 +26,33 @@ int main() {
 
 Durante a análise semântica, o compilador verificaria se as variáveis y e z foram declaradas e se possuem os tipos corretos. Se alguma dessas variáveis não tiver sido declarada, ou se tiverem o tipo errado, o compilador reportará um erro.
 
-A análise semântica é normalmente realizada após a análise léxica e análise, pois é uma análise feita em cima da árvore sintâtica, e é uma etapa importante para garantir que o programa que está sendo compilado esteja bem formado e possa ser executado corretamente.
+A análise semântica é normalmente realizada após a análise léxica e sintática, pois esta é feita em cima da árvore sintâtica feita pelo parser, e é uma etapa importante para garantir que o programa que está sendo compilado esteja bem formado e possa ser executado corretamente.
+
+## Possíveis erros
+
+A análise semântica é responsável por verificar a correção semântica do código, ou seja, se ele está de acordo com as regras da linguagem de programação. Abaixo, estão alguns exemplos de erros que a análise semântica pode reportar em um código escrito em C:
+
+### Utilização de uma variável não declarada
+
+A análise semântica pode reportar um erro se uma variável for usada antes de ser declarada. Por exemplo:
+
+```c
+x = 5; // x não foi declarado
+int x;
+```
+Neste caso, a análise semântica irá detectar que a variável x foi usada antes de ser declarada.
+
+### Uso de tipos de dados incompatíveis
+
+A análise semântica pode detectar um erro se houver uma operação entre tipos de dados incompatíveis, ou se uma variável de um tipo de dado recebeu a atribuição de um outro tipo de dado. Por exemplo:
+
+```c
+int x = 5;
+char y = 'a';
+int z = x + y; // erro de tipos incompatíveis (operação entre tipo de dados incompatíveis)
+``` 
+Neste caso, a análise semântica irá detectar que os tipos de dados **int** e **char** não são compatíveis na operação de soma.
+
 
 # Links úteis
 
