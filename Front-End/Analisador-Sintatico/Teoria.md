@@ -1,7 +1,5 @@
 # Analisador Sintático - a segunda fase da Vanguarda
 
-Atenção ⚠️! Ainda em construção 👷....
-
 ## O que você vai aprender...
 
 - O que é um Analisador Sintático
@@ -14,7 +12,7 @@ Um parser, também chamado de Analisador Sintático, é um programa que recebe u
 
 Existem muitos tipos diferentes de analisadores, mas a maioria deles segue um processo geral semelhante. Aqui está uma visão geral de alto nível de como um analisador pode funcionar:
 
-  **1**-O analisador lê os tokens de entrada um por um.
+  **1**-O analisador lê os tokens de entrada um por um, sendo esses tokens vindo do Analisador Léxico.
   
   **2**-Ele usa um conjunto de regras (essas regras sendo derivadas da gramática) para determinar que tipo de estrutura a entrada deve ter. A gramática especifica as combinações válidas de tokens que são permitidas na linguagem.
   
@@ -23,6 +21,38 @@ Existem muitos tipos diferentes de analisadores, mas a maioria deles segue um pr
   **4**-Se o token de entrada atual for válido de acordo com a gramática, o analisador normalmente consumirá o token e passará para o próximo. Ele também pode atualizar seu estado atual para refletir o fato de ter visto o token.
   
   **5**-Se o token de entrada atual não for válido, o analisador normalmente relatará um erro e interromperá a análise.
+
+## Como funciona na prática
+
+Agora, vamos colocar aqui de como um Parser funciona na prática. Suponhamos que temos a seguinte linha de código em uma linguagem de programação que parece com a linguagem C:
+
+```c
+x = 2 + 3 * y
+```
+A primeira etapa da análise sintática é a análise léxica, na qual o código fonte é dividido em tokens. No exemplo acima, os tokens seriam x, =, 2, +, 3, * e y. Em seguida, o Parser verifica a estrutura sintática desses tokens de acordo com as regras da gramática.
+
+Para analisar a atribuição de valor a uma variável, a gramática da nossa linguagem pode ter uma regra como esta:
+
+```
+ATRIBUICAO → variavel '=' expressao
+```
+
+Essa regra indica que uma atribuição é composta por uma variável, seguida do operador de atribuição (=), e uma expressão. Para analisar a linha de código x = 2 + 3 * y, o Parser começa verificando se o primeiro token é uma variável. Neste caso, é x, que é uma variável válida de acordo com as regras da gramática.
+
+Em seguida, o Parser verifica se o segundo token é o operador de atribuição (=). Se sim, o Parser continua analisando a expressão após o operador de atribuição. A expressão é analisada de acordo com as regras da gramática da linguagem. Suponha que a nossa gramática define a seguinte regra para expressões aritméticas:
+
+``` 
+EXPRESSAO → termo (op_arit termo)*
+```
+Essa regra indica que uma expressão é composta por um termo, seguido de zero ou mais pares de um operador aritmético (op_arit) e outro termo. Cada termo pode ser um número, uma variável ou uma expressão entre parênteses.
+
+No nosso exemplo, a expressão após o operador de atribuição é 2 + 3 * y. O Parser começa analisando o primeiro termo, que é o número 2. Em seguida, ele verifica se o próximo token é um operador aritmético (+). Se sim, o Parser analisa o próximo termo, que é a expressão 3 * y.
+
+O Parser verifica que o primeiro termo dessa expressão é o número 3, seguido do operador aritmético (*) e da variável y. Como a variável y é uma variável válida de acordo com as regras da gramática, o Parser conclui que a expressão 3 * y é válida.
+
+O Parser retorna para a expressão original e verifica se ainda existem mais pares de operadores aritméticos e termos. Nesse caso, não existem mais, então a análise sintática da linha de código x = 2 + 3 * y é concluída com sucesso.
+
+## Conclusão
 
 Analisadores Sintáticos são um componente crítico de compiladores e interpretadores, pois são responsáveis por garantir que o programa de entrada esteja sintaticamente correto e possa ser processado corretamente pelo restante do compilador ou interpretador. Existem muitos algoritmos e técnicas que podem ser usados para implementar um analisador sintático, incluindo analisadores descendentes (como analisadores descendentes recursivos) e analisadores ascendentes (como analisadores LL e analisadores LR).
 
