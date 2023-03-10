@@ -155,10 +155,7 @@ Essas gramáticas são as mais restritas e geram apenas linguagens regulares. Es
 
 Ou seja, uma gramática é dita regular, quando a mesma possui apenas derivação ou para a esquerda ou para a direita, ela não pode misturar derivações.
 
-## Converter Autômato para uma gramática ou vice versa
-
-S → aA
-A → aA | bA | λ
+## Conclusão
 
 Essa hierarquia de gramáticas é importante porque cada tipo de gramática tem suas próprias propriedades e limitações, o que influencia a capacidade de um programa ou sistema de computação em reconhecer ou gerar uma linguagem formal específica. Por exemplo, as linguagens regulares podem ser facilmente reconhecidas e processadas por autômatos finitos, enquanto as linguagens sensíveis ao contexto podem ser reconhecidas por autômatos de pilha. Já as linguagens livres de contexto e irrestritas exigem algoritmos mais complexos e poderosos para o reconhecimento e processamento.
 
