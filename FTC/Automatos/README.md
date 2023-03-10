@@ -72,9 +72,32 @@ graph LR
     t --> endi(((end)))
 ```
 
-Logo entrariamos na máquina onde o primeiro estado é o estado inicial, e teriamos o próximo estado "i", mas para passarmos para o estado "i" precisamos de uma função de transição que irá "consumir" o próximo elemento da cadeia, e verificar se o mesmo é um "i".
+Logo após o primeiro estado (start), teriamos o estado "i", mas para passarmos para o estado "i" precisamos de uma função de transição que irá "consumir" o próximo elemento da cadeia, e verificar se o mesmo é um "i".
 
-Uma observação importante: uma função de transição pode fazer transição em um próprio estado, fazendo disso um loop em um estado.
+Em outras palavras, pense que é como se literalmente fosse uma cadeia condicional
+
+```python
+state = START
+
+def start(chr):
+    
+    if (chr == "i"):
+        state = I
+    else:
+        throw Exception("Erro, caractere invalido")
+```
+        
+
+Uma observação importante: uma função de transição pode fazer transição em um próprio estado, fazendo disso um loop.
+
+Segue abaixo um exemplo de uma AFD para fazer a leitura de um número inteiro positivo.
+
+```mermaid
+graph LR
+    start((start)) --digito--> i(i)
+    i --digito--> i
+    i --diferente de digito--> endi(((end)))
+```
 
 ## Alfabeto
 
