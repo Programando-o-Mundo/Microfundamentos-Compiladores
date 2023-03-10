@@ -6,6 +6,12 @@
 - Como funciona o Analisador Sintático
 - Qual é a importância do Analisador Sintático
 
+## Requisitos
+
+- Gramática
+- Expressões regulares
+- Analisador Léxico
+
 ## Definição e Exemplo
 
 Um parser, também chamado de Analisador Sintático, é um programa que recebe uma entrada na forma de uma sequência de tokens (Geralmente essa sequência vem do Analisador Léxico) e verifica se estes estão de acordo com a sintaxe de uma determinada linguagem de programação. Se a entrada for válida de acordo com a sintaxe, o analisador normalmente construirá uma representação da entrada na forma de uma árvore de sintaxe abstrata (AST) ou alguma outra representação estruturada. Se a entrada não for válida, o analisador normalmente relatará um erro.
