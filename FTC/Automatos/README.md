@@ -84,7 +84,7 @@ def start(chr):
     if (chr == "i"):
         state = I
     else:
-        throw Exception("Erro, caractere invalido")
+        raise Exception("Erro, caractere invalido")
 ```
         
 
