@@ -25,8 +25,8 @@ Muito obrigado e um ótimo dia para todos! :)
 
 # Sumário
 
-* [COMO CONTRIBUIR](CONTRIBUIR.md)
-* [Microfundamentos Compiladores](README.md)
+* [COMO CONTRIBUIR](./CONTRIBUIR.md)
+* [Microfundamentos Compiladores](./README.md)
 * [FTC](FTC/README.md)
   * [Autômato finito determinístico](FTC/Automatos/README.md)
   * [Expressões regulares](FTC/Expressoes-regulares/README.md)
