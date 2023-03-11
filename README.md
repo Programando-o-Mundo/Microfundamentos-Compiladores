@@ -6,6 +6,8 @@ eu ficaria muito agradecido.
 
 # Microfundamentos de Compiladores
 
+![social](https://user-images.githubusercontent.com/9157977/224495304-7e621c21-26aa-4ebe-a59e-b5ad1b571fe9.jpg)
+
 Essa disciplina tem a fama de ser bem difícil e as vezes pode ser difícil encontrar material bom
 na internet que consiga explicar bem o conteúdo. Por esse motivo, decidi criar esse repositório para 
 agrupar todos os materiais pertinentes para o aprendizado da disciplina, desde a fundamentação em FTC(Fundamentos
