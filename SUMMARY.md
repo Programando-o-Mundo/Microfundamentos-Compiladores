@@ -1,7 +1,7 @@
 # Table of contents
 
-* [COMO CONTRIBUIR](README.md)
-* [Microfundamentos Compiladores](<README (1).md>)
+* [Microfundamentos Compiladores](README.md)
+* [COMO CONTRIBUIR](CONTRIBUIR.md)
 * [FTC](FTC/README.md)
   * [Autômato finito determinístico](FTC/Automatos/README.md)
   * [Expressões regulares](FTC/Expressoes-regulares/README.md)
