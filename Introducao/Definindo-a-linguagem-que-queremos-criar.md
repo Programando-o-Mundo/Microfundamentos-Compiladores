@@ -36,7 +36,7 @@ A seguir, é feita a descrição informal da sintaxe das declarações e comando
 
 Comando de repetição pode assumir duas formas:
 
-```
+```python
 while expressao:
     comando
 ```
@@ -46,7 +46,7 @@ onde expressao é do tipo lógico. A repetição dos comandos será feita enquan
 
 Pode assumir as seguintes formas, onde expressao é do tipo lógico:
 
-```
+```python
 if expressao:
     comando1
 elif expressao:
@@ -65,7 +65,7 @@ Os comandos elif e else são opcionais. Eles permitem criar múltiplos testes co
 
 Eis aqui um exemplo de um programa escrito na linguagem Pyxer:
 
-```
+```python
 nome = input("Digite seu nome: ")
 
 float percentual
