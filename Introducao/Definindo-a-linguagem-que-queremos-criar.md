@@ -3,147 +3,82 @@
 Nesta aula iremos definir a linguagem que iremos criar. Ela é mais simples do que a maior parte das linguagens 
 imperativas que utilizamos hoje em dia, mas será o suficiente para entendermos os conceitos que queremos aprender na disciplina.
 
-## Linguagem X
+## Linguagem Pyxer
 
-A linguagem “X” é uma linguagem imperativa simplificada que oferece tratamento para 5 
-tipos  básicos:  char,  string,  int,  float,  boolean.  O  tipo  char  é  um  escalar  que  varia  de  0  a 
-255, podendo ser escrito em formato alfanumérico ou hexadecimal. Constantes em formato 
-hexadecimal são da forma 0xDD, onde D é um dígito hexadecimal. Constantes em formato 
-alfanumérico são da forma ‘c’ onde c é um caractere imprimível. Um string é um vetor com 
-no  máximo  255  caracteres  úteis,  que  quando  armazenado  em  memória,  tem  seu  conteúdo 
-útil terminado pelo byte 0. Constantes que representam strings são delimitadas por aspas e 
-não devem conter aspas ou quebra de linha. O tipo int é um escalar que varia de –231 a 231-
-1.  O  tipo  float  é  um  número  decimal  com  6  casas  de  precisão,  sem  notação  científica, 
-variando de -99999.9 a 99999.9. Por ser ponto flutuante, a precisão é compartilhada entre a 
-parte  inteira  e  a  fracionária.  Constantes  do  tipo  float  podem  começar  ou  terminar  com  o 
-ponto decimal. Constantes do tipo boolean são da forma true e false.  
- 
-Os  caracteres  permitidos  em  um  arquivo  fonte  são  as  letras,  dígitos,  espaço,  sublinhado, 
-ponto,  vírgula,  ponto-e-vírgula,  dois-pontos,  parênteses,  colchetes,  chaves,  mais,  menos, 
-aspas, apóstrofo, barra, barra em pé, arroba, e-comercial, porcentagem, exclamação, 
+A linguagem "Pyxer" é uma linguagem imperativa simplificada que oferece tratamento para 5 tipos básicos: char, string, int, float, boolean. A sintaxe da linguagem Pyxer é inspirada na linguagem Python, tornando-a mais fácil de ler e escrever.
 
-interrogação,  maior,  menor  e  igual,  além  da  quebra  de  linha  (bytes  0Dh  e  0Ah  para 
-Windows e 0Ah para Linux e MacOS). Qualquer outro caractere é considerado inválido.  
- 
-Os identificadores de constantes e variáveis são compostos de letras, dígitos e sublinhado, 
-devem  começar  com  letra  ou  sublinhado  e  ter  no  máximo  32  caracteres.  Maiúsculas  e 
-minúsculas não são diferenciadas.  
- 
-As seguintes palavras e suas variações são reservadas: 
-| | | | | | | 
-|---|---|---|---|---|---|
-| const  | int | char | while | if | float |
-| else | && | \|\| | \! | \:= | = |
-| ( | ) | < | >  | !=  | >= |
-| <= | , | + | - | * | / |
-| ; | { | } | readln | div | string |
-| write | writeln | mod | [ | ] | true |
-| fase | boolean | | | | |
- 
-Os  comandos  existentes  em  “X”  permitem  atribuição  a  variáveis  através  do  operador  :=, 
-entrada de valores pelo teclado e saída de valores para a tela, estruturas de repetição (repita 
-enquanto),    estruturas  de  teste  (se  -  então  -  senão),  expressões  aritméticas  com  inteiros  e 
-reais,  expressões  lógicas  e  relacionais,  conversão  para  int  ou  float,  além  de  atribuição, 
-leitura/escrita de elementos e comparação de igualdade para strings. A ordem de 
-precedência nas expressões é: 
-a) Acesso a posições do string, usando [ ]; 
-b) parênteses; 
-c) conversão de tipos: int(expressão) ou float(expressão). A expressão tem que ser do tipo 
-inteiro ou real; 
-d) negação lógica (!), aplicado a valores do tipo lógico; 
-e) multiplicação  aritmética  (*)  e  lógica  (&&),  divisão  real  (/),  quociente  da  divisão  de  2 
-inteiros (div) e resto da divisão (mod) entre inteiros. Uma multiplicação ou divisão real  
-entre inteiro e real resulta em real. 
-f) subtração  (-),  adição  aritmética  (+)  e  lógica  (  ||  ).  Apenas  números  inteiros  ou  reais 
-podem ser somados ou subtraídos. Uma operação entre inteiro e real resulta em real. 
-g) comparação entre números ou caracteres (=,!=,<,>,<=,>=) e entre strings (=). Números 
-inteiros  e  reais  podem  ser  comparados  entre  si.  Caracteres  só  podem  ser  comparados 
-com outros caracteres. 
- 
-Comentários são delimitados por /* e */ . Espaços em branco e quebra de linha podem ser 
-usados livremente como delimitadores de lexemas. 
-  
-A estrutura básica de um programa-fonte é da forma: 
- 
+Os tipos básicos são os seguintes:
+
+ - char: um escalar que varia de 0 a 255, podendo ser escrito em formato alfanumérico ou hexadecimal.
+ - string: uma sequência de no máximo 255 caracteres úteis, terminada pelo byte 0 em memória. Constantes string são delimitadas por aspas simples ou duplas e não devem conter aspas ou quebra de linha.
+ - int: um escalar que varia de -2^31 a 2^31 - 1.
+ - float: um número decimal com 6 casas de precisão, sem notação científica, variando de -99999.9 a 99999.9. A precisão é compartilhada entre a parte inteira e a fracionária.
+ - boolean: representa os valores lógicos verdadeiro e falso, expressos como True e False.
+ - Os identificadores de constantes e variáveis são compostos de letras, dígitos e sublinhados, devem começar com letra ou sublinhado e ter no máximo 32 caracteres. Maiúsculas e minúsculas não são diferenciadas.
+
+### Estrutura de um programa Pyxer
+
+Um programa em Pyxer consiste em declarações e comandos, sem a necessidade de terminar as linhas com ponto-e-vírgula. A estrutura básica de um programa-fonte é da seguinte forma:
+
 ```
 (Declarações ∪ Comandos)*  fim_arquivo 
 ```
-Declarações e comandos são finalizados por ponto-e-vírgula. Um bloco de comandos pode 
-substituir um comando. Nesse caso, o bloco se inicia por { contém uma sequência de 0 ou 
-mais  comandos  e  é  terminado  por  }.  Dentro  de  um  bloco  de  comandos  não  pode  haver 
-declarações. 
- 
-A seguir, é feita a descrição informal da sintaxe das declarações e comandos da linguagem: 
- 
- 1-  Declaração  de  variáveis:  é  da  forma:    tipo  lista-de-ids    ,  onde  tipo  pode  ser  int,  float, 
-string,  boolean  ou  char  e  lista-de-ids  é  uma  série  de  1  ou  mais  identificadores, 
-separados  por  vírgulas.  Cada  variáveis  pode  ser  opcionalmente  inicializadas  na  forma: 
-id  :=  valor  ,  onde  id  é  um  identificador.  Para  inteiros  e  reais,  valor  é  uma  constante 
-precedida  ou  não  de  sinal  negativo;  Para  caractere,  uma  constante  hexadecimal  ou 
-alfanumérica; Para string, uma constante string; Para boolean, true ou false.  
- 
-2. Declaração  de  constantes  escalares:  é  da  forma:        const  id  =  valor  ,  onde  id  é  um 
-identificador  e  valor  uma  constante  numérica,  precedida  ou  não  de  sinal  negativo, 
-string, boolean, hexadecimal ou caractere alfanumérico. 
- 
-3. Comando  de  atribuição:  é  da  forma    id  :=  expressão  para  tipos  numéricos,  lógico, 
-caractere e string ou id[expressão] := expressão para elementos de strings (caracteres). 
-Identificadores de variáveis reais podem receber números inteiros. Fora isso, a 
-atribuição só pode ser realizada para tipos idênticos. 
- 
-4. Comando de repetição pode assumir duas formas:  
+Declarações e comandos não precisam ser finalizados por ponto-e-vírgula. Um bloco de comandos pode substituir um comando. Nesse caso, o bloco é iniciado por : e indentado, contendo uma sequência de 0 ou mais comandos. Dentro de um bloco de comandos, não pode haver declarações.
+
+### Declarações e Comandos
+A seguir, é feita a descrição informal da sintaxe das declarações e comandos da linguagem Pyxer:
+
+ - Declaração de variáveis: é da forma tipo nome_variavel, onde tipo pode ser int, float, string, boolean, ou char e nome_variavel é um identificador. As variáveis podem ser opcionalmente inicializadas na forma nome_variavel = valor.
+
+ - Declaração de constantes: é da forma const nome_constante = valor, onde nome_constante é um identificador e valor é uma constante numérica, string, boolean, hexadecimal ou caractere alfanumérico.
+
+ - Comando de atribuição: é da forma variavel = expressao para tipos numéricos, lógico, caractere e string ou variavel[indice] = expressao para elementos de strings (caracteres).
+
+Comando de repetição pode assumir duas formas:
 
 ```
-while (expressão) comando 
-while (expressão) { comandos } 
-``` 
-
-onde  expressão  é  do  tipo  lógico.  A  repetição  do  comando  ou  bloco  de  comandos  será 
-feita enquanto a expressão for verdadeira.  
- 
-5. Comando de teste: pode assumir as formas, onde expressão é do tipo lógico:  
- 
+while expressao:
+    comando
 ```
-if   (expressão)  comando1 
-if   (expressão) comando1 else comando2   
+onde expressao é do tipo lógico. A repetição dos comandos será feita enquanto a expressão for verdadeira.
+
+### Comando de teste: 
+
+Pode assumir as seguintes formas, onde expressao é do tipo lógico:
+
 ```
- 
-comando1  e/ou comando2  são comandos da linguagem que podem ser 
-independentemente substituídos por blocos da forma: 
- 
+if expressao:
+    comando1
+elif expressao:
+    comando2
+else:
+    comando3
 ```
-if   (expressão) { lista_comandos1 } else { lista_comandos2 }   
+
+Os comandos elif e else são opcionais. Eles permitem criar múltiplos testes condicionais ou uma ação padrão caso todas as condições anteriores falhem.
+
+ - Comando nulo: Um pass indica um comando nulo. Nada é executado nesse comando.
+
+ - Comando de leitura: é da forma variavel = input(), onde variavel é um identificador de variável numérica, caractere alfanumérico ou string. A função input() pode receber uma string como parâmetro para exibir uma mensagem antes da leitura.
+
+ - Comandos de escrita: são da forma print(expressao1, expressao2, ...) onde as expressões são valores numéricos, caracteres ou strings. A função print() imprime os valores separados por espaços e, por padrão, adiciona uma quebra de linha após a impressão.
+
+Eis aqui um exemplo de um programa escrito na linguagem Pyxer:
+
 ```
- 
-onde as listas são sequências de comandos. 
- 
-6. Comando  nulo:  Um    ponto-e-vírgula  não  precedido  de  comando  indica  um  comando 
-nulo. Nada é executado nesse comando.  
+nome = input("Digite seu nome: ")
 
-7. Comando  de  leitura:  é  da  forma  readln(id),  onde  id  é  um  identificador  de  variável 
-numérica,  caractere  alfanumérico  ou  string.  Caracteres  e  strings  são  lidos  da  mesma 
-maneira,  sem  que  o  usuário  precise  coloca-los  entre  aspas  ou  apóstrofos.  Números 
-podem ter sinal negativo. 
- 
-8. Comandos de escrita: são da forma write(lista_expressões) ou  writeln( 
-lista_expressões)    ,  onde  lista_expressões  é  uma  lista  de  uma  ou  mais  expressões 
-numéricas,  caracteres  ou  strings,  separadas  por  vírgulas.  A  última  forma,  quando 
-executada, causa a quebra de linha após a impressão. 
+float percentual
+int i = 1
+const N = 10
+while i <= N:
+    percentual = float(i) / N
+    print(f"{percentual:.6f}: Olá, {nome}")
+    i = i + 1
+```
 
-Eis aqui um exemplo de um programa escrito na nossa linguagem "X"
+Este programa solicita ao usuário seu nome e imprime uma mensagem de saudação com um percentual crescente 10 vezes.
 
-```c
-string nome;
 
-write("Digite seu nome: ");
-readln(nome);
 
-float percentual;
-int i:=1;
-const N=10;
-While (i<=N) {
-  percentual:=float(i)/N;
-  writeln(percentual,": Ola' ",nome);
-  i:=i+1;
-}
-``` 
+
