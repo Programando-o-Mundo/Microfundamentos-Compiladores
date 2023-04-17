@@ -13,12 +13,10 @@
 
 ## Definição
 
-As gramáticas LL(1) são um tipo de gramática livre de contexto que possuem a propriedade de serem analisáveis por um autômato com pilha 
-determinístico (DPDA) que consome a entrada da esquerda para a direita (Left-to-right) e constrói uma derivação mais à esquerda (Leftmost derivation)
-da cadeia de entrada.
-
-A notação LL(1) significa que a gramática é do tipo "Left-to-right, Leftmost derivation, 1 lookahead", ou seja, para analisar a entrada, o DPDA 
-precisa de apenas um símbolo de lookahead da entrada.
+As gramáticas LL(1) são um tipo de gramática livre de contexto que possuem a propriedade de serem analisáveis sem necessitar de backtracking.
+O primeiro "L" em LL(1) significa escanear a entrada da esquerda para a direita (Left-to-right), o segundo "L" significa produzir uma derivação mais à esquerda e o "1" 
+significa usar um símbolo de lookahead em cada etapa para tomar decisões de parsing, ou seja precisa de apenas um símbolo de lookahead da entrada. Em outras
+palavras, uma gramática LL(1) também é uma gramática "Left-to-right, Leftmost derivation, 1 lookahead".
 
 ## Restrições
 
