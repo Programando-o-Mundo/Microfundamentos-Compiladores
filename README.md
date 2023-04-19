@@ -6,7 +6,7 @@ eu ficaria muito agradecido.
 
 # Microfundamentos de Compiladores
 
-![social](https://user-images.githubusercontent.com/9157977/224495304-7e621c21-26aa-4ebe-a59e-b5ad1b571fe9.jpg)
+![social2](https://user-images.githubusercontent.com/9157977/233157283-4e2e0a6c-0b15-4ef7-a34b-e4c4dcf8cfe4.jpg)
 
 Essa disciplina tem a fama de ser bem difícil e as vezes pode ser difícil encontrar material bom
 na internet que consiga explicar bem o conteúdo. Por esse motivo, decidi criar esse repositório para 
